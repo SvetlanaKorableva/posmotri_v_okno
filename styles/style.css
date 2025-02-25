@@ -1,3 +1,4 @@
+/* Общие настройки */
 *,
 *::before,
 *::after {
@@ -8,31 +9,190 @@ html {
   block-size: 100%;
 }
 
-.page {
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
+body {
+  margin: 0;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  background-color: #1b1919;
+  color: #fff;
+  background-color: #1B1919;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
+/* Контейнер страницы */
+.page {
+  display: flex; /* Делаем страницу флекс-контейнером */
+  justify-content: center; /* Центрируем .content горизонтально */
+  align-items: center; /* Центрируем .content вертикально */
+  min-block-size: 100vh; /* Занимает всю высоту экрана */
 }
 
-ul,
-ol {
-  list-style: none;
+.content {
+  display: flex; /* Располагаем элементы .content в строку */
+  gap: 40px; /* Отступ между элементами */
+  max-inline-size: 1140px; /* Максимальная ширина контейнера */
+  block-size: 534px; /* Фиксированная высота контейнера */
+  overflow: hidden; /* Обрезаем вылезающий контент */
+}
+
+/* Левая колонка */
+.result {
+  flex: none; /* Устанавливаем фиксированную ширину */
+  inline-size: 711px; /* Ширина левой колонки */
+  display: flex;
+  flex-direction: column; /* Элементы внутри .result располагаются вертикально */
+  align-items: flex-start; /* Прижатие элементов к началу контейнера */
+  margin-top: 78px;
+}
+
+.result__video-container {
+  width: 100%; /* Занимает всю доступную ширину */
+  height: 386px; /* Фиксированная высота видео */
+  position: relative; /* Для корректной работы замощения видео */
+}
+
+.result__video {
+  width: 100%; /* Занимает всю ширину контейнера */
+  height: 100%; /* Занимает всю высоту контейнера */
+  object-fit: cover; /* Видео не выходит за пределы контейнера */
+}
+
+.search-form {
+  width: 100%; /* Растягиваем форму на всю ширину */
+  display: flex; /* Располагаем элементы формы в строку */
+  flex-wrap: wrap; /* Разрешаем перенос при маленькой ширине */
+  gap: 20px; /* Пропорциональное распределение пространства */
+  align-items: flex-start; /* Прижатие к началу контейнера */
+  margin-top: 20px; /* Отступ сверху после видео */
+}
+
+.search-form__fieldset {
+  flex: 1; /* Каждое поле занимает равную часть пространства */
+}
+
+.search-form__textfield {
+  padding: 10px;
+  border: 1px solid #555;
+  background-color: #222;
+  color: #fff;
+  font-size: inherit;
+  width: 100%; /* Поле растягивается на всю доступную ширину */
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 10px;
+}
+
+.search-form__pseudo-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #555;
+  margin-right: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox {
+  background-color: #007bff;
+}
+
+.search-form__submit-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-form__submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Правая колонка */
+.content__details {
+  flex: 1; /* Занимает одну часть пространства */
+  display: flex;
+  flex-direction: column; /* Элементы внутри .content__details располагаются вертикально */
+  gap: 20px; /* Отступ между заголовком и списком карточек */
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 75px; /* Размер шрифта */
+  text-transform: uppercase; /* Преобразование текста в капс */
+  text-align: left; /* Выравнивание по левой стороне */
+  line-height: 0.9; /* Убираем межстрочный интервал */
+  margin: 0; /* Убираем отступы */
+}
+
+.content__accent {
+  color: #545050ff; /* Цвет акцента */
+}
+
+.content__list {
+  flex: 1; /* Растягиваем список на всю доступную высоту */
+  list-style: none; /* Убираем маркеры */
+  padding: 0; /* Убираем стандартные отступы */
+  margin: 0; /* Убираем стандартные отступы */
+  display: flex; /* Располагаем элементы в строку */
+  flex-wrap: wrap; /* Разрешаем перенос на новую строку */
+  gap: 30px; /* Отступ между карточками */
+  overflow-y: auto; /* Добавляем скролл при переполнении */
+}
+
+/* Вертикальные отступы между элементами .content__list-item */
+.content__list-item + .content__list-item {
+  margin-top: 20px; /* Отступ только между элементами, кроме последнего */
+}
+
+* Элементы списка */
+.content__list-item {
+  background: none; /* Убираем фон */
+  padding: 0; /* Убираем внутренние отступы */
+  margin: 0; /* Убираем внешние отступы */
+  width: 398px; /* Фиксированная ширина карточки */
+  height: 107px; /* Фиксированная высота карточки */
+  display: flex; /* Располагаем элементы в строку */
+  align-items: center; /* Выравниваем содержимое по центру вертикально */
+  border: 1px solid transparent; /* Для наглядности границ (можно убрать) */
+}
+
+/* Карточки видео */
+.content__video-card {
+  display: flex; /* Располагаем элементы в строку */
+  align-items: center; /* Выравниваем содержимое по центру вертикально */
+  width: 100%; /* Занимает всю ширину карточки */
+  height: 100%; /* Занимает всю высоту карточки */
+}
+
+/* Видео-часть карточки */
+.content__video-card-thumbnail {
+  width: 50%; /* Занимает половину пространства */
+  height: 100%; /* Занимает всю высоту карточки */
+  object-fit: cover; /* Изображение не выходит за пределы */
+  border-radius: 0; /* Убираем скругление углов */
+}
+
+/* Текстовая часть карточки */
+.content__video-card-description-container {
+  flex: 1; /* Занимает оставшееся пространство */
+  display: flex;
+  flex-direction: column; /* Располагаем элементы вертикально */
+  justify-content: center; /* Центрируем содержимое вертикально */
+  padding-left: 10px; /* Отступ между текстом и видео */
+}
+
+/* Стили для заголовка карточки */
+.content__video-card-title {
+  font-size: 1em; /* Размер шрифта */
+  margin: 0; /* Убираем отступы */
+  color: #fff; /* Белый цвет текста */
+}
+
+/* Стили для описания карточки */
+.content__video-card-description {
+  font-size: 0.8em; /* Размер шрифта */
+  margin: 0; /* Убираем отступы */
+  color: #aaa; /* Серый цвет текста */
 }
