@@ -29,7 +29,7 @@ body {
   display: flex; /* Располагаем элементы .content в строку */
   gap: 40px; /* Отступ между элементами */
   max-inline-size: 1140px; /* Максимальная ширина контейнера */
-  block-size: 534px; /* Фиксированная высота контейнера */
+  block-size: 534px;  /* Фиксированная высота контейнера */
   overflow: hidden; /* Обрезаем вылезающий контент */
 }
 
@@ -122,7 +122,7 @@ body {
   font-size: 75px; /* Размер шрифта */
   text-transform: uppercase; /* Преобразование текста в капс */
   text-align: left; /* Выравнивание по левой стороне */
-  line-height: 0.9; /* Убираем межстрочный интервал */
+  line-height: 1; /* Убираем межстрочный интервал */
   margin: 0; /* Убираем отступы */
 }
 
@@ -146,7 +146,7 @@ body {
   margin-top: 20px; /* Отступ только между элементами, кроме последнего */
 }
 
-* Элементы списка */
+/* Элементы списка */
 .content__list-item {
   background: none; /* Убираем фон */
   padding: 0; /* Убираем внутренние отступы */
@@ -155,7 +155,6 @@ body {
   height: 107px; /* Фиксированная высота карточки */
   display: flex; /* Располагаем элементы в строку */
   align-items: center; /* Выравниваем содержимое по центру вертикально */
-  border: 1px solid transparent; /* Для наглядности границ (можно убрать) */
 }
 
 /* Карточки видео */
@@ -177,22 +176,166 @@ body {
 /* Текстовая часть карточки */
 .content__video-card-description-container {
   flex: 1; /* Занимает оставшееся пространство */
-  display: flex;
-  flex-direction: column; /* Располагаем элементы вертикально */
-  justify-content: center; /* Центрируем содержимое вертикально */
-  padding-left: 10px; /* Отступ между текстом и видео */
+  display: flex; /* Используем flexbox */
+  flex-direction: column; /* Элементы располагаются вертикально */
+  justify-content: flex-start; /* Прижимаем содержимое к верхней части */
+  align-items: flex-start; /* Прижимаем содержимое к левой стороне */
+  padding: 0; /* Убираем внутренние отступы */
 }
 
 /* Стили для заголовка карточки */
 .content__video-card-title {
-  font-size: 1em; /* Размер шрифта */
+  font-family: 'Oswald', sans-serif; /* Используем шрифт Oswald */
+  font-size: 30px; /* Размер шрифта */
+  text-transform: uppercase; /* Преобразование текста в капс */
   margin: 0; /* Убираем отступы */
   color: #fff; /* Белый цвет текста */
+  line-height: 1; /* Убираем межстрочный интервал */
 }
 
 /* Стили для описания карточки */
 .content__video-card-description {
-  font-size: 0.8em; /* Размер шрифта */
-  margin: 0; /* Убираем отступы */
+  font-size: 14px; /* Размер шрифта для описания */
+  margin: 5px 0 0 0; /* Добавляем небольшой отступ сверху */
   color: #aaa; /* Серый цвет текста */
+}
+
+/* Убираем стандартную рамку fieldset */
+.search-form__fieldset {
+  border: none; /* Убираем рамку fieldset */
+  padding: 0; /* Убираем внутренние отступы */
+  margin-top: -10px; /* Убираем внешние отступы */
+  display: flex; /* Располагаем элементы вертикально */
+  flex-direction: column; /* Элементы идут друг за другом по вертикали */
+  gap: 0; /* Отступ между заголовком и полем ввода */
+}
+
+/* Стили для заголовка fieldset */
+.search-form__fieldset-title {
+  font-family: 'Fira Sans Condensed', sans-serif; /* Устанавливаем шрифт Fira Sans Condensed */
+  font-size: 16px; /* Размер шрифта */
+  font-weight: normal; /* Убираем жирное начертание */
+  margin: 0; /* Убираем стандартные отступы */
+  color: #fff; /* Белый цвет текста */
+  position: relative;
+  padding-bottom: 4px; /* Пространство между текстом и линией */
+}
+
+/* Стили для поля ввода */
+.search-form__textfield {
+  background-color: transparent; /* Прозрачный фон */
+  border: none; /* Убираем все границы */
+  border-bottom: 1px solid #fff; /* Добавляем только нижнюю границу */
+  padding: 4px 0; /* Добавляем внутренние отступы сверху и снизу */
+  font-size: 16px; /* Размер шрифта */
+  color: rgba(255, 255, 255, 0.8); /* Белый цвет текста */
+  width: 225px; /* Поле занимает всю доступную ширину */
+}
+
+/* Убираем фокусное обрамление при клике */
+.search-form__textfield:focus {
+  outline: none; /* Убираем стандартное выделение */
+  border-bottom: 1px solid #007bff; /* Меняем цвет границы при фокусе */
+}
+
+/* Скрываем визуально спан с текстом "Город" */
+.visually-hidden {
+  position: absolute; /* Выносим элемент за пределы видимой области */
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Стили для списка чекбоксов */
+.search-form__checkbox-list {
+  display: flex; /* Располагаем чекбоксы в строку */
+  gap: 16px; /* Отступ между чекбоксами */
+}
+
+/* Стили для label */
+.search-form__label {
+  display: flex; /* Выравниваем чекбокс и текст */
+  align-items: center; /* Выравниваем содержимое по центру */
+  gap: 0px; /* Отступ между чекбоксом и текстом */
+}
+
+/* Стили для псевдочекбокса */
+.search-form__pseudo-checkbox {
+  position: relative; /* Добавляем относительное позиционирование */
+  display: inline-block;
+  width: 19px; /* Размер квадрата */
+  height: 19px; /* Размер квадрата */
+  background-color: transparent; /* Прозрачный фон */
+  border: 1px solid #fff; /* Белая обводка */
+  transition: background-color 0.3s ease; /* Плавный переход цвета */
+}
+
+/* Внутренний чёрный квадрат (появляется при нажатии) */
+.search-form__pseudo-checkbox::before {
+  content: ''; /* Создаём псевдоэлемент */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 0.5px; /* Отступ от верха */
+  left: 0.5px; /* Отступ от левого края */
+  width: 16px; /* Размер внутреннего чёрного квадрата */
+  height: 16px; /* Размер внутреннего чёрного квадрата */
+  background-color: transparent; /* Прозрачный фон по умолчанию */
+  border: 1px solid #000; /* Чёрная граница */
+  transition: background-color 0.3s ease; /* Плавный переход цвета */
+  opacity: 0; /* Скрываем элемент по умолчанию */
+}
+
+/* Заполнение белым цветом внутри чёрной границы */
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+  background-color: #fff; /* Заполняем белым цветом */
+  opacity: 1; /* Показываем элемент */
+}
+
+/* Убираем фон у неактивного состояния */
+.search-form__checkbox:not(:checked) + .search-form__pseudo-checkbox {
+  background-color: transparent; /* Прозрачный фон */
+}
+
+/* Стили для заголовка "Город" (оставляем подчёркивание) */
+.search-form__fieldset:first-of-type .search-form__fieldset-title {
+  border-bottom: 1px solid #fff; /* Подчёркивание белого цвета */
+  width: 225px;
+  padding-bottom: 4px; /* Отступ до подчёркивания */
+}
+
+/* Стили для заголовка "Время суток" (убираем подчёркивание) */
+.search-form__fieldset:last-of-type(1) .search-form__fieldset-title {
+  position: relative; /* Добавляем относительное позиционирование */
+  padding-bottom: 4px; /* Отступ до границы */
+  border-bottom: none; /* Убираем подчёркивание */
+}
+
+.search-form__fieldset:nth-of-type(2) {
+  margin-left: -10px; /* Сдвигаем блок влево на 20px (меняйте значение по необходимости) */
+}
+
+/* Стили для кнопки "Найти" */
+.search-form__submit-button {
+  display: flex; /* Используем flexbox для центрирования */
+  align-items: center; /* Выравниваем содержимое по вертикали */
+  justify-content: center; /* Выравниваем содержимое по горизонтали */
+  width: 194px; /* Ширина кнопки */
+  height: 34px; /* Высота кнопки */
+  background-color: transparent; /* Прозрачный фон */
+  border: 1px solid #fff; /* Белая обводка в 1 пиксель */
+  font-family: 'Fira Sans Condensed', sans-serif; /* Шрифт */
+  font-size: 18px; /* Размер шрифта */
+  font-weight: normal; /* Обычное начертание */
+  color: #fff; /* Белый цвет текста */
+  cursor: pointer; /* Изменение курсора на "pointer" при наведении */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Плавные переходы */
+}
+
+/* Убираем фокусное обрамление */
+.search-form__submit-button:focus {
+  outline: none; /* Убираем стандартное выделение */
 }
