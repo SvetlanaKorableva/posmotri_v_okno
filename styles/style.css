@@ -28,7 +28,7 @@ body {
 .content {
   display: flex; /* Располагаем элементы .content в строку */
   gap: 40px; /* Отступ между элементами */
-  max-inline-size: 1140px; /* Максимальная ширина контейнера */
+  max-inline-size: 1150px; /* Максимальная ширина контейнера */
   block-size: 534px;  /* Фиксированная высота контейнера */
   overflow: hidden; /* Обрезаем вылезающий контент */
 }
@@ -47,6 +47,7 @@ body {
   width: 100%; /* Занимает всю доступную ширину */
   height: 386px; /* Фиксированная высота видео */
   position: relative; /* Для корректной работы замощения видео */
+  margin-bottom: 5px;
 }
 
 .result__video {
@@ -92,21 +93,33 @@ body {
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox {
-  background-color: #007bff;
+  background-color: #f7f9fb;
 }
 
 .search-form__submit-button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  display: flex; /* Используем flexbox для центрирования */
+  align-items: center; /* Выравниваем содержимое по вертикали */
+  justify-content: center; /* Выравниваем содержимое по горизонтали */
+  width: 194px; /* Ширина кнопки */
+  height: 34px; /* Высота кнопки */
+  background-color: transparent; /* Прозрачный фон */
+  border: 1px solid #fff; /* Белая обводка в 1 пиксель */
+  font-family: 'Fira Sans Condensed', sans-serif; /* Шрифт */
+  font-size: 18px; /* Размер шрифта */
+  font-weight: normal; /* Обычное начертание */
+  color: #fff; /* Белый цвет текста */
+  cursor: pointer; /* Изменение курсора на "pointer" при наведении */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Плавные переходы */
 }
 
+/* Подчёркивание текста кнопки "Найти" при наведении */
 .search-form__submit-button:hover {
-  background-color: #0056b3;
+  text-decoration: underline; /* Добавляем подчёркивание */
+}
+
+.search-form__submit-button:active {
+  background-color: #545050; /* Цвет фона при нажатии */
+  text-decoration: none;
 }
 
 /* Правая колонка */
@@ -189,6 +202,9 @@ body {
   font-size: 30px; /* Размер шрифта */
   text-transform: uppercase; /* Преобразование текста в капс */
   margin: 0; /* Убираем отступы */
+  padding: 0;
+  top: 0; /* Прижимаем к верхней границе */
+  left: 0; /* Прижимаем к левой границе */
   color: #fff; /* Белый цвет текста */
   line-height: 1; /* Убираем межстрочный интервал */
 }
@@ -213,7 +229,7 @@ body {
 /* Стили для заголовка fieldset */
 .search-form__fieldset-title {
   font-family: 'Fira Sans Condensed', sans-serif; /* Устанавливаем шрифт Fira Sans Condensed */
-  font-size: 16px; /* Размер шрифта */
+  font-size: 18px; /* Размер шрифта */
   font-weight: normal; /* Убираем жирное начертание */
   margin: 0; /* Убираем стандартные отступы */
   color: #fff; /* Белый цвет текста */
@@ -315,11 +331,12 @@ body {
 }
 
 .search-form__fieldset:nth-of-type(2) {
-  margin-left: -10px; /* Сдвигаем блок влево на 20px (меняйте значение по необходимости) */
+  margin-left: -20px; /* Сдвигаем блок влево на 20px (меняйте значение по необходимости) */
 }
 
 /* Стили для кнопки "Найти" */
 .search-form__submit-button {
+  margin-top: 11px;
   display: flex; /* Используем flexbox для центрирования */
   align-items: center; /* Выравниваем содержимое по вертикали */
   justify-content: center; /* Выравниваем содержимое по горизонтали */
@@ -338,4 +355,39 @@ body {
 /* Убираем фокусное обрамление */
 .search-form__submit-button:focus {
   outline: none; /* Убираем стандартное выделение */
+}
+
+/* Подчёркивание текста при наведении на "Утро", "День", "Ночь" */
+.search-form__label-text:hover {
+  text-decoration: underline; /* Добавляем подчёркивание */
+  cursor: pointer; /* Изменяем курсор на "pointer" */
+}
+
+/* Стили для кнопки "Показать еще" */
+.more-button {
+  display: flex; /* Используем flexbox для центрирования */
+  align-items: center; /* Выравниваем содержимое по вертикали */
+  justify-content: center; /* Выравниваем содержимое по горизонтали */
+  width: 399px; /* Растягиваем кнопку по ширине родителя */
+  height: 34px; /* Фиксированная высота кнопки */
+  background-color: transparent; /* Прозрачный фон */
+  border: 1px solid #fff; /* Белая обводка в 1 пиксель */
+  font-family: 'Fira Sans Condensed', sans-serif; /* Шрифт */
+  font-size: 18px; /* Размер шрифта */
+  font-weight: normal; /* Обычное начертание */
+  color: #fff; /* Белый цвет текста */
+  cursor: pointer; /* Изменение курсора на "pointer" при наведении */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Плавные переходы */
+}
+
+/* Эффект при наведении */
+.more-button:hover {
+  text-decoration: underline; /* Добавляем подчёркивание при наведении */
+}
+
+/* Эффект при нажатии */
+.more-button:active {
+  background-color: #545050; /* Цвет фона при нажатии */
+  border-color: #545050; /* Цвет границы при нажатии */
+  text-decoration: none; /* Убираем подчёркивание при нажатии */
 }
