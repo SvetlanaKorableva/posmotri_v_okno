@@ -199,21 +199,48 @@ body {
 /* Стили для заголовка карточки */
 .content__video-card-title {
   font-family: 'Oswald', sans-serif; /* Используем шрифт Oswald */
-  font-size: 30px; /* Размер шрифта */
+  font-size: 29px; /* Размер шрифта */
   text-transform: uppercase; /* Преобразование текста в капс */
   margin: 0; /* Убираем отступы */
   padding: 0;
   top: 0; /* Прижимаем к верхней границе */
   left: 0; /* Прижимаем к левой границе */
   color: #fff; /* Белый цвет текста */
+  transform: translateY(-40%); /* Сдвигаем вверх на половину высоты */
+  position: relative;
+  text-decoration: none;
+  border-bottom: none;
   line-height: 1; /* Убираем межстрочный интервал */
+}
+
+.content__card-link {
+  text-decoration: none; /* Убираем подчёркивание */
+  color: inherit; /* Наследуем цвет от родителя */
 }
 
 /* Стили для описания карточки */
 .content__video-card-description {
-  font-size: 14px; /* Размер шрифта для описания */
-  margin: 5px 0 0 0; /* Добавляем небольшой отступ сверху */
-  color: #aaa; /* Серый цвет текста */
+  font-size: 18px; /* Размер шрифта для описания */
+  transform: translateY(-85%);
+  color: #fff; 
+  text-decoration: none; 
+}
+
+/* Эффект при наведении на карточку */
+.content__list-item:hover .content__video-card-title,
+.content__list-item:hover .content__video-card-description {
+  text-decoration: underline; /* Добавляем подчёркивание */
+}
+
+/* Эффект при нажатии на карточку */
+.content__list-item:active {
+  background-color: #545050; /* Меняем фон карточки */
+}
+
+.content__list-item:active .content__video-card-title,
+.content__list-item:active .content__video-card-description {
+  text-decoration: none;
+  color: #fff; /* Меняем цвет текста */
 }
 
 /* Убираем стандартную рамку fieldset */
