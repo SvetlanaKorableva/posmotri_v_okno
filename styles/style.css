@@ -20,13 +20,13 @@ body {
 /* Контейнер страницы */
 .page {
   display: flex; /* Делаем страницу флекс-контейнером */
-  justify-content: center; /* Центрируем .content горизонтально */
-  align-items: center; /* Центрируем .content вертикально */
+  justify-content: center; /* Центрируем горизонтально */
+  align-items: center; /* Центрируем вертикально */
   min-block-size: 100vh; /* Занимает всю высоту экрана */
 }
 
 .content {
-  display: flex; /* Располагаем элементы .content в строку */
+  display: flex; /* Располагаем элементы в строку */
   gap: 40px; /* Отступ между элементами */
   max-inline-size: 1150px; /* Максимальная ширина контейнера */
   block-size: 534px;  /* Фиксированная высота контейнера */
@@ -44,20 +44,20 @@ body {
 }
 
 .result__video-container {
-  width: 100%; /* Занимает всю доступную ширину */
+  width: 100%; 
   height: 386px; /* Фиксированная высота видео */
   position: relative; /* Для корректной работы замощения видео */
   margin-bottom: 5px;
 }
 
 .result__video {
-  width: 100%; /* Занимает всю ширину контейнера */
-  height: 100%; /* Занимает всю высоту контейнера */
+  width: 100%; 
+  height: 100%; 
   object-fit: cover; /* Видео не выходит за пределы контейнера */
 }
 
 .search-form {
-  width: 100%; /* Растягиваем форму на всю ширину */
+  width: 100%; 
   display: flex; /* Располагаем элементы формы в строку */
   flex-wrap: wrap; /* Разрешаем перенос при маленькой ширине */
   gap: 20px; /* Пропорциональное распределение пространства */
@@ -100,19 +100,18 @@ body {
   display: flex; /* Используем flexbox для центрирования */
   align-items: center; /* Выравниваем содержимое по вертикали */
   justify-content: center; /* Выравниваем содержимое по горизонтали */
-  width: 194px; /* Ширина кнопки */
-  height: 34px; /* Высота кнопки */
+  width: 194px; 
+  height: 34px; 
   background-color: transparent; /* Прозрачный фон */
   border: 1px solid #fff; /* Белая обводка в 1 пиксель */
   font-family: 'Fira Sans Condensed', sans-serif; /* Шрифт */
-  font-size: 18px; /* Размер шрифта */
-  font-weight: normal; /* Обычное начертание */
-  color: #fff; /* Белый цвет текста */
+  font-size: 18px; 
+  font-weight: normal; 
+  color: #fff; 
   cursor: pointer; /* Изменение курсора на "pointer" при наведении */
   transition: background-color 0.3s ease, color 0.3s ease; /* Плавные переходы */
 }
 
-/* Подчёркивание текста кнопки "Найти" при наведении */
 .search-form__submit-button:hover {
   text-decoration: underline; /* Добавляем подчёркивание */
 }
@@ -132,11 +131,11 @@ body {
 
 .title {
   font-family: 'Oswald', sans-serif;
-  font-size: 75px; /* Размер шрифта */
+  font-size: 75px; 
   text-transform: uppercase; /* Преобразование текста в капс */
   text-align: left; /* Выравнивание по левой стороне */
   line-height: 1; /* Убираем межстрочный интервал */
-  margin: 0; /* Убираем отступы */
+  margin: 0; 
 }
 
 .content__accent {
@@ -146,8 +145,8 @@ body {
 .content__list {
   flex: 1; /* Растягиваем список на всю доступную высоту */
   list-style: none; /* Убираем маркеры */
-  padding: 0; /* Убираем стандартные отступы */
-  margin: 0; /* Убираем стандартные отступы */
+  padding: 0; 
+  margin: 0; 
   display: flex; /* Располагаем элементы в строку */
   flex-wrap: wrap; /* Разрешаем перенос на новую строку */
   gap: 30px; /* Отступ между карточками */
@@ -161,9 +160,9 @@ body {
 
 /* Элементы списка */
 .content__list-item {
-  background: none; /* Убираем фон */
-  padding: 0; /* Убираем внутренние отступы */
-  margin: 0; /* Убираем внешние отступы */
+  background: none; 
+  padding: 0; 
+  margin: 0; 
   width: 398px; /* Фиксированная ширина карточки */
   height: 107px; /* Фиксированная высота карточки */
   display: flex; /* Располагаем элементы в строку */
@@ -174,8 +173,8 @@ body {
 .content__video-card {
   display: flex; /* Располагаем элементы в строку */
   align-items: center; /* Выравниваем содержимое по центру вертикально */
-  width: 100%; /* Занимает всю ширину карточки */
-  height: 100%; /* Занимает всю высоту карточки */
+  width: 100%; 
+  height: 100%; 
 }
 
 /* Видео-часть карточки */
@@ -189,24 +188,24 @@ body {
 /* Текстовая часть карточки */
 .content__video-card-description-container {
   flex: 1; /* Занимает оставшееся пространство */
-  display: flex; /* Используем flexbox */
+  display: flex; 
   flex-direction: column; /* Элементы располагаются вертикально */
   justify-content: flex-start; /* Прижимаем содержимое к верхней части */
   align-items: flex-start; /* Прижимаем содержимое к левой стороне */
-  padding: 0; /* Убираем внутренние отступы */
+  padding: 0; 
 }
 
 /* Стили для заголовка карточки */
 .content__video-card-title {
   font-family: 'Oswald', sans-serif; /* Используем шрифт Oswald */
-  font-size: 29px; /* Размер шрифта */
+  font-size: 29px; 
   text-transform: uppercase; /* Преобразование текста в капс */
-  margin: 0; /* Убираем отступы */
+  margin: 0; 
   padding: 0;
-  top: 0; /* Прижимаем к верхней границе */
-  left: 0; /* Прижимаем к левой границе */
-  color: #fff; /* Белый цвет текста */
-  transform: translateY(-40%); /* Сдвигаем вверх на половину высоты */
+  top: 0; 
+  left: 0; 
+  color: #fff; 
+  transform: translateY(-30%); /* Сдвигаем вверх на половину высоты */
   position: relative;
   text-decoration: none;
   border-bottom: none;
@@ -220,7 +219,7 @@ body {
 
 /* Стили для описания карточки */
 .content__video-card-description {
-  font-size: 18px; /* Размер шрифта для описания */
+  font-size: 18px; 
   transform: translateY(-85%);
   color: #fff; 
   text-decoration: none; 
@@ -237,29 +236,28 @@ body {
   background-color: #545050; /* Меняем фон карточки */
 }
 
+
 .content__list-item:active .content__video-card-title,
 .content__list-item:active .content__video-card-description {
   text-decoration: none;
-  color: #fff; /* Меняем цвет текста */
+  color: #fff; 
 }
 
-/* Убираем стандартную рамку fieldset */
 .search-form__fieldset {
   border: none; /* Убираем рамку fieldset */
-  padding: 0; /* Убираем внутренние отступы */
-  margin-top: -10px; /* Убираем внешние отступы */
+  padding: 0; 
+  margin-top: -10px;
   display: flex; /* Располагаем элементы вертикально */
   flex-direction: column; /* Элементы идут друг за другом по вертикали */
   gap: 0; /* Отступ между заголовком и полем ввода */
 }
 
-/* Стили для заголовка fieldset */
 .search-form__fieldset-title {
-  font-family: 'Fira Sans Condensed', sans-serif; /* Устанавливаем шрифт Fira Sans Condensed */
-  font-size: 18px; /* Размер шрифта */
-  font-weight: normal; /* Убираем жирное начертание */
-  margin: 0; /* Убираем стандартные отступы */
-  color: #fff; /* Белый цвет текста */
+  font-family: 'Fira Sans Condensed', sans-serif; 
+  font-size: 18px; 
+  font-weight: normal; 
+  margin: 0; 
+  color: #fff; 
   position: relative;
   padding-bottom: 4px; /* Пространство между текстом и линией */
 }
@@ -267,21 +265,20 @@ body {
 /* Стили для поля ввода */
 .search-form__textfield {
   background-color: transparent; /* Прозрачный фон */
-  border: none; /* Убираем все границы */
+  border: none; 
   border-bottom: 1px solid #fff; /* Добавляем только нижнюю границу */
   padding: 4px 0; /* Добавляем внутренние отступы сверху и снизу */
-  font-size: 16px; /* Размер шрифта */
+  font-size: 16px; 
   color: rgba(255, 255, 255, 0.8); /* Белый цвет текста */
   width: 225px; /* Поле занимает всю доступную ширину */
 }
 
-/* Убираем фокусное обрамление при клике */
+
 .search-form__textfield:focus {
   outline: none; /* Убираем стандартное выделение */
-  border-bottom: 1px solid #007bff; /* Меняем цвет границы при фокусе */
+  border-bottom: 1px solid #fff; 
 }
 
-/* Скрываем визуально спан с текстом "Город" */
 .visually-hidden {
   position: absolute; /* Выносим элемент за пределы видимой области */
   width: 1px;
@@ -294,53 +291,47 @@ body {
   border: 0;
 }
 
-/* Стили для списка чекбоксов */
 .search-form__checkbox-list {
   display: flex; /* Располагаем чекбоксы в строку */
   gap: 16px; /* Отступ между чекбоксами */
 }
 
-/* Стили для label */
 .search-form__label {
   display: flex; /* Выравниваем чекбокс и текст */
   align-items: center; /* Выравниваем содержимое по центру */
   gap: 0px; /* Отступ между чекбоксом и текстом */
 }
 
-/* Стили для псевдочекбокса */
 .search-form__pseudo-checkbox {
   position: relative; /* Добавляем относительное позиционирование */
   display: inline-block;
-  width: 19px; /* Размер квадрата */
-  height: 19px; /* Размер квадрата */
+  width: 19px; 
+  height: 19px; 
   background-color: transparent; /* Прозрачный фон */
-  border: 1px solid #fff; /* Белая обводка */
+  border: 1px solid #fff; 
   transition: background-color 0.3s ease; /* Плавный переход цвета */
 }
 
-/* Внутренний чёрный квадрат (появляется при нажатии) */
 .search-form__pseudo-checkbox::before {
   content: ''; /* Создаём псевдоэлемент */
   position: absolute; /* Абсолютное позиционирование */
-  top: 0.5px; /* Отступ от верха */
-  left: 0.5px; /* Отступ от левого края */
-  width: 16px; /* Размер внутреннего чёрного квадрата */
-  height: 16px; /* Размер внутреннего чёрного квадрата */
+  top: 0.5px; 
+  left: 0.5px; 
+  width: 16px; 
+  height: 16px; 
   background-color: transparent; /* Прозрачный фон по умолчанию */
-  border: 1px solid #000; /* Чёрная граница */
+  border: 1px solid #000; 
   transition: background-color 0.3s ease; /* Плавный переход цвета */
   opacity: 0; /* Скрываем элемент по умолчанию */
 }
 
-/* Заполнение белым цветом внутри чёрной границы */
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   background-color: #fff; /* Заполняем белым цветом */
   opacity: 1; /* Показываем элемент */
 }
 
-/* Убираем фон у неактивного состояния */
 .search-form__checkbox:not(:checked) + .search-form__pseudo-checkbox {
-  background-color: transparent; /* Прозрачный фон */
+  background-color: transparent; 
 }
 
 /* Стили для заголовка "Город" (оставляем подчёркивание) */
@@ -361,30 +352,27 @@ body {
   margin-left: -20px; /* Сдвигаем блок влево на 20px (меняйте значение по необходимости) */
 }
 
-/* Стили для кнопки "Найти" */
 .search-form__submit-button {
   margin-top: 11px;
   display: flex; /* Используем flexbox для центрирования */
   align-items: center; /* Выравниваем содержимое по вертикали */
   justify-content: center; /* Выравниваем содержимое по горизонтали */
-  width: 194px; /* Ширина кнопки */
-  height: 34px; /* Высота кнопки */
-  background-color: transparent; /* Прозрачный фон */
-  border: 1px solid #fff; /* Белая обводка в 1 пиксель */
-  font-family: 'Fira Sans Condensed', sans-serif; /* Шрифт */
-  font-size: 18px; /* Размер шрифта */
+  width: 194px; 
+  height: 34px; 
+  background-color: transparent; 
+  border: 1px solid #fff; 
+  font-family: 'Fira Sans Condensed', sans-serif; 
+  font-size: 18px; 
   font-weight: normal; /* Обычное начертание */
-  color: #fff; /* Белый цвет текста */
+  color: #fff; 
   cursor: pointer; /* Изменение курсора на "pointer" при наведении */
   transition: background-color 0.3s ease, color 0.3s ease; /* Плавные переходы */
 }
 
-/* Убираем фокусное обрамление */
 .search-form__submit-button:focus {
   outline: none; /* Убираем стандартное выделение */
 }
 
-/* Подчёркивание текста при наведении на "Утро", "День", "Ночь" */
 .search-form__label-text:hover {
   text-decoration: underline; /* Добавляем подчёркивание */
   cursor: pointer; /* Изменяем курсор на "pointer" */
@@ -395,14 +383,14 @@ body {
   display: flex; /* Используем flexbox для центрирования */
   align-items: center; /* Выравниваем содержимое по вертикали */
   justify-content: center; /* Выравниваем содержимое по горизонтали */
-  width: 399px; /* Растягиваем кнопку по ширине родителя */
-  height: 34px; /* Фиксированная высота кнопки */
-  background-color: transparent; /* Прозрачный фон */
-  border: 1px solid #fff; /* Белая обводка в 1 пиксель */
-  font-family: 'Fira Sans Condensed', sans-serif; /* Шрифт */
-  font-size: 18px; /* Размер шрифта */
+  width: 399px; 
+  height: 34px; 
+  background-color: transparent; 
+  border: 1px solid #fff; 
+  font-family: 'Fira Sans Condensed', sans-serif; 
+  font-size: 18px; 
   font-weight: normal; /* Обычное начертание */
-  color: #fff; /* Белый цвет текста */
+  color: #fff; 
   cursor: pointer; /* Изменение курсора на "pointer" при наведении */
   transition: background-color 0.3s ease, color 0.3s ease; /* Плавные переходы */
 }
@@ -414,7 +402,7 @@ body {
 
 /* Эффект при нажатии */
 .more-button:active {
-  background-color: #545050; /* Цвет фона при нажатии */
-  border-color: #545050; /* Цвет границы при нажатии */
-  text-decoration: none; /* Убираем подчёркивание при нажатии */
+  background-color: #545050; 
+  border-color: #545050; 
+  text-decoration: none; 
 }
