@@ -1,16 +1,32 @@
-.error {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #545050;
+/* Стили для состояния ошибки в блоке видео */
+.result__video-container.error-state {
+  position: relative; /* Для позиционирования текста ошибки */
+  background-color: #545050; /* Темно-серый фон при ошибке */
 }
 
-.error__title {
-  color: #fff;
-  font-family: Oswald, sans-serif;
-  font-size: 30px;
-  text-align: center;
-  text-transform: uppercase;
+/* Текст ошибки внутри блока видео */
+.result__video-container.error-state .error-message {
+  position: absolute; /* Абсолютное позиционирование */
+  inset: 0; /* Занимает всё пространство родителя */
+  display: flex; /* Используем flexbox для центрирования */
+  justify-content: center; /* Центрируем горизонтально */
+  align-items: center; /* Центрируем вертикально */
+  font-family: 'Oswald', sans-serif; /* Шрифт Oswald */
+  font-size: 30px; /* Размер шрифта */
+  text-transform: uppercase; /* Преобразование текста в капс */
+  color: #fff; /* Белый цвет текста */
+  pointer-events: none; /* Отключаем взаимодействие с текстом */
+}
+
+/* Скрываем текст ошибки по умолчанию */
+.error-message {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
